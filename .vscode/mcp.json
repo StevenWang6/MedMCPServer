@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "medmcp": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["-m", "medmcp", "stdio"],
+      "cwd": "D:\\project\\MedMCPServer",
+      "env": {}
+    }
+  }
+}

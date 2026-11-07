@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medmcp"
+version = "0.1.0"
+description = "MCP server providing IEC 62304 medical device software life-cycle knowledge query services"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "MedMCPServer" }]
+keywords = ["mcp", "iec-62304", "medical-device", "software", "regulatory"]
+dependencies = [
+    "mcp>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+# Optional true-semantic embeddings backend (requires torch wheels for your Python).
+embeddings = [
+    "sentence-transformers>=2.6.0",
+]
+# SSE / HTTP transport (already required for `medmcp sse`).
+http = [
+    "starlette>=0.27",
+    "uvicorn>=0.23",
+]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+medmcp = "medmcp.transport:main"
+
+[tool.setuptools]
+packages = ["medmcp"]
+
+[tool.setuptools.package-data]
+medmcp = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
