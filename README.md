@@ -1,5 +1,9 @@
 # MedMCPServer
 
+[![CI](https://github.com/StevenWang6/MedMCPServer/actions/workflows/ci.yml/badge.svg)](https://github.com/StevenWang6/MedMCPServer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+
 一个提供 **IEC 62304 医疗器械软件生命周期知识查询服务** 的 MCP（Model Context
 Protocol）服务器。它内置了 IEC 62304 标准的条款、要求和核心概念，并支持接入你自己的
 文档，通过关键词检索 + 语义检索（TF-IDF，可选嵌入模型）进行查询。
